@@ -42,15 +42,6 @@ public class StackUtil {
         String[] sts = sw.toString().replace("\r", "").split("\n");
         StackTraceElement[] rawElements = t.getStackTrace();
         List<StackTraceElement> elements = new ArrayList<>();
-        byte b1;
-        int m;
-        StackTraceElement[] arrayOfStackTraceElement1;
-        for (m = (arrayOfStackTraceElement1 = rawElements).length, b1 = 0; b1 < m; ) {
-            StackTraceElement element = arrayOfStackTraceElement1[b1];
-            if (element.getClassName().contains("lenis0012"))
-                elements.add(element);
-            b1++;
-        }
         String[] out = new String[sts.length + elements.size() * 4 + 9];
         out[0] = String.valueOf(prefix) + ChatColor.RED + "Internal error!";
         out[1] = String.valueOf(prefix) + "If this bug has not been reported please open a ticket at BukkitDev";
