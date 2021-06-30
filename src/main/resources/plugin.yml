@@ -2,4 +2,4 @@ name: Levels
 version: ${project.version}
 main: xyz.monkefy.Levels
 authors: [ Monkefy ]
-description: The same levelsystem as InvadedLands. Stored in an MySQL Database.
+description: The same levelsystem as InvadedLands. Stored in a database.
