@@ -1,2 +1,11 @@
 ## ----- Settings ------ ##
 plugin-preifx: '&6[Levels] '
+
+## ----- MySQL Settings ----- ##
+MySQL:
+  use: false
+  host: 'localhost'
+  port: 3306
+  database: 'bukkit'
+  username: 'root'
+  password: ''
