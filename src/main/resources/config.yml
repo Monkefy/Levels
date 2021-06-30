@@ -1,6 +1,6 @@
 ## ----- Settings ------ ##
 plugin-preifx: '&6[Levels] '
-
+start-level: 1
 ## ----- MySQL Settings ----- ##
 MySQL:
   use: false
