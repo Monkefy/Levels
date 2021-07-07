@@ -26,9 +26,14 @@ public class ThePlayer {
 
     public void create() {
         int level = 1;
-        int prestige = 0;
+        int prestige = 1;
         int experience = 0;
-        this.sql.set(new Object[] {this.name, Integer.valueOf(level), Integer.valueOf(experience), Integer.valueOf(prestige)});
+        this.sql.set(new Object[] {
+                this.name,
+                Integer.valueOf(level),
+                Integer.valueOf(experience),
+                Integer.valueOf(prestige)
+        });
     }
 
     public void save() {
@@ -45,4 +50,27 @@ public class ThePlayer {
         return ((Integer)this.sql.get("username", i, this.name)).intValue();
     }
 
+    public int getLevel() {
+        return level;
+    }
+
+    public int getPrestige() {
+        return prestige;
+    }
+
+    public void setPrestige(int prestige) {
+        this.prestige = prestige;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
 }

@@ -49,23 +49,25 @@ public class SQLite implements DataManager{
     }
 
     @Override
-    public void set(Object... objectParam) {
+    public void set(Object... values) {
         try {
-            String value = "";
-            for(int i = 0; i < objectParam.length; i++) {
-                value = String.valueOf(objectParam) + "?";
-                if(i < objectParam.length - 1) value = String.valueOf(value) + "?";
+            String valueCount = "";
+            for (int i = 0; i < values.length; i++) {
+                valueCount = String.valueOf(valueCount) + "?";
+                if (i < values.length - 1)
+                    valueCount = String.valueOf(valueCount) + ",";
             }
-
-            PreparedStatement preparedStatement = this.con.prepareStatement("INSERT INTO " + this.table.getName() + this.table.getValues() + " VALUES(" + objectParam + ");");
-            for(int j = 0; j < objectParam.length; j++) preparedStatement.setObject( j + 1, objectParam[j]);
-            preparedStatement.executeUpdate();
+            PreparedStatement ps = this.con.prepareStatement("INSERT INTO " + this.table.getName() + this.table.getValues() + " VALUES(" + valueCount + ");");
+            for (int j = 0; j < values.length; j++)
+                ps.setObject(j + 1, values[j]);
+            ps.executeUpdate();
         } catch (SQLException e) {
-            Bukkit.getLogger().severe(prefix + "Failed SQL task.");
+            Bukkit.getLogger().severe("[PvpLevels] Failed SQL task:");
             StackUtil.dumpStack(e);
             return;
         }
     }
+
 
     @Override
     public Object get(String parameter1, String parameter2, Object objParam) {
@@ -137,7 +139,7 @@ public class SQLite implements DataManager{
             return;
         }
         try {
-            this.con = DriverManager.getConnection("jdbc:sqlite" + this.fileDirectory + File.separator + this.fileName);
+            this.con = DriverManager.getConnection("jdbc:sqlite:" + this.fileDirectory + File.separator + this.fileName);
             this.statement = this.con.createStatement();
             this.statement.setQueryTimeout(30);
         } catch (SQLException e) {

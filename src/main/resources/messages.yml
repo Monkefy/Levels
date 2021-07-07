@@ -1,0 +1,21 @@
+general:
+  NO_PERMISSION: '&cYou do not have permission to use this command.'
+  UNKNOWN_ARGS: '&cIt looks like you did not use that command properly, use &6/levelconfig &cfor help.'
+  CONSOLE_NO_PERMISSION: '&cYou are not allowed to do that in console'
+  UNABLE_TO_PRESTIGE: '&cYou have to be level {max-level} to prestige!'
+  LEVEL_UP: '&aYou are now level {level}'
+  LEVEL_SEE_OTHER: '&a{player} &2is currently level &a{level} &2and prestige {prestige}'
+  PRESTIGE_MESSAGE_GLOBAL: '&a{player} has prestiged to {prestige}'
+  PLAYER_DOES_NOT_EXIST: '&6{player}&e does not exist.'
+  LEVEL_SEE_ONE: '&aYou are currently level {level} and prestige {prestige}'
+  LEVEL_SEE_TWO: '&2You have {experience}/{experiencemax} experience.'
+  KILLED_PLAYER: '&6You have killed &e{player} &6and received &e{experience}&6.'
+staff:
+  COMMAND_LIST:
+    - '&6===== &eConfig &6====='
+    - '&6/levelconfig removelevel [player] [value]'
+    - '&6/levelconfig addlevel [player] [value]'
+    - '&6/levelconfig removeprestige [player] [value]'
+    - '&6/levelconfig addprestige [player] [value]'
+    - '&6/levelconfig reload'
+    - '&6================='

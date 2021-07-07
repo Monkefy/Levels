@@ -1,6 +1,27 @@
 ## ----- Settings ------ ##
+ADMIN-PERMISSION: 'levels.admin'
 plugin-preifx: '&6[Levels] '
-start-level: 1
+experience-received-per-kill: 5
+experience-per-level-prestige-1: 30
+experience-per-level-prestige-2: 60
+experience-per-level-prestige-3: 90
+experience-per-level-from-prestige-4: 120
+
+## NOTE: Levels above 100 don't have colors in chat, this will also be the level you have to be to prestige.
+max-level: 100
+max-prestige: 3
+## You can list commands here that are being executed when the player prestiges.
+announce-prestige: false
+prestige-1-rewards:
+  - 'give {player} minecraft:diamond 1'
+prestige-2-rewards:
+  - 'give {player} minecraft:diamond 1'
+  - 'give {player} minecraft:diamond 1'
+prestige-3-rewards:
+  - 'give {player} minecraft:diamond 1'
+  - 'give {player} minecraft:diamond 1'
+  - 'give {player} minecraft:diamond 1'
+
 ## ----- MySQL Settings ----- ##
 MySQL:
   use: false

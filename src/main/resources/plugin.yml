@@ -3,3 +3,9 @@ version: ${project.version}
 main: xyz.monkefy.Levels
 authors: [ Monkefy ]
 description: The same levelsystem as InvadedLands, Stored in a database.
+commands:
+  lvl:
+  level:
+  prestige:
+  levelconfig:
+  lconfig:
