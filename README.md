@@ -1,6 +1,8 @@
 # Levels
 Spigot plugin that adds levels to the game.
 
+Everything is configurable in the data folder of the plugin.
+
 Commands:
 - /level <player> (optional) [Shows the level the player is or other players are.]
 - /lvl [Alias for /level.]
