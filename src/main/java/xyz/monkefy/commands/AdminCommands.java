@@ -23,10 +23,11 @@ public class AdminCommands implements CommandExecutor {
             if(sender instanceof Player) {
                 Player p = (Player) sender;
                 if(p.hasPermission(Levels.getInstance().getConfig().getString("ADMIN-PERMISSION")) || p.isOp()) {
-                    if(args.length == 0) {
-                        chatUtil.sendListMessage(p, ListMessages.STAFF_COMMAND_LIST.get());
-                    } else if(args.length == 1) {
-                        if(args[0].equalsIgnoreCase("reload")) {
+                    switch(args.length) {
+                        case 0: 
+                            chatUtil.sendListMessage(p, ListMessages.STAFF_COMMAND_LIST.get());
+                        case 1:
+                            if(args[0].equalsIgnoreCase("reload")) {
                             MessageFile messageFile = new MessageFile(Levels.getInstance());
                             PrefixFile prefixFile = new PrefixFile(Levels.getInstance());
                             messageFile.reload();
@@ -34,6 +35,7 @@ public class AdminCommands implements CommandExecutor {
                             Levels.getInstance().reloadConfig();
                             chatUtil.sendMessage(p, "&6Successfully reloaded config.");
                         } else chatUtil.sendMessage(p, Message.UNKNOWN_ARGS.get());
+                    
                     } else if(args.length > 2) {
                         ThePlayer thePlayer;
                         String user = args[1];
@@ -43,6 +45,7 @@ public class AdminCommands implements CommandExecutor {
                         } else {
                             thePlayer = Levels.getInstance().getPlayer(user);
                         }
+                        
                         if(thePlayer.isCreated()) {
                             try {
                                 int level = thePlayer.getLevel();
